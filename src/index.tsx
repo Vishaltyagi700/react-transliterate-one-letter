@@ -135,7 +135,7 @@ export const ReactTransliterate = ({
 
     // search for the last occurence of the space character from
     // the cursor
-    const indexOfLastSpace =
+    let indexOfLastSpace =
       value.lastIndexOf(" ", caret - 1) < value.lastIndexOf("\n", caret - 1)
         ? value.lastIndexOf("\n", caret - 1)
         : value.lastIndexOf(" ", caret - 1);
@@ -144,6 +144,7 @@ export const ReactTransliterate = ({
     // one character after the space character
     // index of last character is one before the current position
     // of the caret
+    indexOfLastSpace = caret-2
     setMatchStart(indexOfLastSpace + 1);
     setMatchEnd(caret - 1);
 
